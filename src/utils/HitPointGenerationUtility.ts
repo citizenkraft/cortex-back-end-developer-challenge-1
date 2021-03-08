@@ -1,5 +1,3 @@
-import { PrimaryStatType } from "../models/enums/primaryStatType";
-import { Character } from "../models/character/character";
 import { HitPointGenerationType } from "../models/enums/hitPointGenerationType";
 import { exception } from "console";
 import { CharacterClass } from "../models/character/characterClass";
@@ -25,7 +23,7 @@ class HitPointGenerationUtility {
             constitutionModifier: number) : number {
         let totalHp = 0;
         characterClasses.forEach((charClass) => {
-            totalHp += (charClass.classLevel * (Math.ceil(charClass.hitDiceValue / 2)) + constitutionModifier);
+            totalHp += (charClass.classLevel * (this.GetRolledAverage(charClass.hitDiceValue)) + constitutionModifier);
         });
         return totalHp;
     }
@@ -35,7 +33,18 @@ class HitPointGenerationUtility {
         constitutionModifier: number) : number {
         throw exception(`GenerateHitPointsWithHitDieRolls Method Not Implemented`);
     }
-    
+   
+    private static GetRolledAverage(hitDiceValue: number) : number {
+        let sum = 0;
+        if (hitDiceValue > 0) {
+            for(let i = 1; i <= hitDiceValue; i++) {
+                sum += i;
+            }
+            return Math.ceil(sum/hitDiceValue)
+        } else {
+            return 0;
+        }
+    }
   }
    
   export default HitPointGenerationUtility;
