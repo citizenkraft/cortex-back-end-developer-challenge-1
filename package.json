@@ -1,0 +1,43 @@
+{
+    "name": "dndbeyond-backend-challenge",
+    "version": "0.1.0",
+    "description": "Backend challenge for the fine folks at Fandom",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Microsoft/TypeScript-Node-Starter"
+    },
+    "author": "Dustin Kraft",
+    "license": "MIT",
+    "scripts": {
+        "build-ts": "tsc -p tsconfig.json",
+        "build": "npm run build-ts",
+        "rebuild": "npm run build && npm run start",
+        "serve": "node dist/src/server.js",
+        "start": "npm run serve",
+        "test": "mocha -r ts-node/register tests/**/*.test.ts",
+        "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
+    },
+    "dependencies": {
+        "async": "3.2.0",
+        "body-parser": "^1.19.0",
+        "dotenv": "8.2.0",
+        "express": "4.17.1",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@types/async": "3.2.5",
+        "@types/chai": "^4.2.15",
+        "@types/express": "4.17.11",
+        "@types/mocha": "^8.2.1",
+        "@types/node": "14.14.25",
+        "@types/request": "2.48.5",
+        "@types/uuid": "^8.3.0",
+        "@typescript-eslint/eslint-plugin": "4.14.2",
+        "@typescript-eslint/parser": "4.14.2",
+        "chai": "^4.3.3",
+        "mocha": "^8.3.1",
+        "nyc": "^15.1.0",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.1.3"
+    }
+}

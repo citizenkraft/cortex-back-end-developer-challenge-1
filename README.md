@@ -1,3 +1,25 @@
+# Running Instructions
+run: `docker-compose up` in your favorite command line.  
+Create a character by posting [briv.json](briv.json) (or similar) to localhost:4001/character
+Use the returned ID (should be 1) to access the other endpoints.
+PUT /character/1/attack
+PUT /character/1/heal
+PUT /character/1/addTempHp
+
+npm test to run unit tests.
+
+# What I would improve
+1. Waaay too many magic strings. This is my first express project, and in the time I allotted I couldn't quite nail down the POST body conversion to enumerations that I would like to.  I come from a .net background, so that bothers me a lot.  I am a big fan of strongly typed everythings.
+
+2. Logging.  Both for debugging and as a combat history log, but alas, there are so many hours in the day.
+
+3. I'm not sure if it was intentional, but the `hitDiceValue` and `hitdicevalue` caused some issues.  I would implment some middleware to try to sanitize the json in the request bodies.
+
+I hope to talk to you in person about this code and where else I would like to take it.
+
+Have a lucky day!
+Dustin
+
 # Cortex Back End Developer Challenge
 In this test we would like you to create an API that will manage a player character’s Hit Points(HP). Clients will need to be able to do the following:
 - Deal damage of different types (bludgeoning, fire, etc) while considering character resistences and immunities
