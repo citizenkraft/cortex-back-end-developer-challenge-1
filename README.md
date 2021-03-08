@@ -15,6 +15,8 @@ npm test to run unit tests.
 
 3. I'm not sure if it was intentional, but the `hitDiceValue` and `hitdicevalue` caused some issues.  I would implment some middleware to try to sanitize the json in the request bodies.
 
+4. MOAR Unit tests!  Coverage was limited by my timebox. 
+
 I hope to talk to you in person about this code and where else I would like to take it.
 
 Have a lucky day!
