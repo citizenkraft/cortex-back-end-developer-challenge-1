@@ -9,7 +9,7 @@ PUT /character/1/addTempHp
 npm test to run unit tests.
 
 # What I would improve
-1. Waaay too many magic strings. This is my first express project, and in the time I allotted I couldn't quite nail down the POST body conversion to enumerations that I would like to.  I come from a .net background, so that bothers me a lot.  I am a big fan of strongly typed everythings.
+1. Wire up enums correctly. This is my first express project, and in the timebox I allotted I couldn't quite nail down the POST body conversion to enumerations that I would like to.  I come from a .net background, so that bothers me a lot.  I am a big fan of strongly typed everythings.
 
 2. Logging.  Both for debugging and as a combat history log, but alas, there are so many hours in the day.
 
